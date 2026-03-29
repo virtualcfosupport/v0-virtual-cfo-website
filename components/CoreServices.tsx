@@ -6,7 +6,7 @@ import {
   FileText, Mail, DollarSign, BarChart3, TrendingDown, RefreshCw, ClipboardList,
   Inbox, CheckSquare, FolderOpen, CreditCard, Users, Calendar, Shield,
   Wallet, LineChart, Zap, Search, Target, Clock,
-  Bot, Settings, Database, Link, MailCheck, Lock
+  Bot, Settings, Database, Link as LinkIcon, MailCheck, Lock
 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -51,7 +51,7 @@ const techServices = [
   { icon: Bot, title: 'OCR Invoice Capture', description: 'Automated data extraction from paper and PDF invoices — no manual keying' },
   { icon: Settings, title: 'Workflow Automation', description: 'Rules-based routing, approval triggers, and exception flagging' },
   { icon: Database, title: 'Real-Time Dashboards', description: 'Live AP/AR dashboards with drill-down into aging, open items, and trends' },
-  { icon: Link, title: 'Bank Feed Integration', description: 'Automated bank reconciliation via direct feed connections' },
+  { icon: LinkIcon, title: 'Bank Feed Integration', description: 'Automated bank reconciliation via direct feed connections' },
   { icon: MailCheck, title: 'Automated Customer Communications', description: 'Invoice delivery, payment reminders, and receipt confirmations' },
   { icon: Lock, title: 'Secure Document Management', description: 'Encrypted storage of all invoices, contracts, and payment records' },
 ]
