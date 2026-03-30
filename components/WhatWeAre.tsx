@@ -12,7 +12,7 @@ const fadeInUp = {
 const cards = [
   {
     icon: Briefcase,
-    title: 'Finance Operations Outsourcing',
+    title: 'Finance Operations Management',
     description:
       'End-to-end ownership of AP/AR — invoicing, collections, vendor payments, reconciliation, and reporting. We run the whole cycle, not just parts of it.',
   },
@@ -44,7 +44,7 @@ export default function WhatWeAre() {
             Where We Sit
           </h2>
           <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
-            Positioned as finance operations outsourcing — with CFO-level oversight baked in.
+            We operate as your embedded finance team — combining execution with CFO-level oversight.
           </p>
         </motion.div>
 
