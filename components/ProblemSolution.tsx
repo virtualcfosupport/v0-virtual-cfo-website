@@ -131,9 +131,9 @@ export default function ProblemSolution() {
           </motion.div>
 
           {/* Architecture Diagram + Outcomes */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Layered Architecture */}
-            <div className="space-y-4">
+            <div className="space-y-4 order-2 lg:order-1">
               {solutionLayers.map((layer, index) => (
                 <motion.div
                   key={layer.title}
@@ -174,7 +174,7 @@ export default function ProblemSolution() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-[#111827] rounded-xl p-8 border border-[#2D3748]"
+              className="bg-[#111827] rounded-xl p-8 border border-[#2D3748] order-1 lg:order-2"
             >
               <h3 className="font-serif text-2xl font-bold text-[#F0EDE6] mb-6">Key Outcomes</h3>
               <ul className="space-y-4">

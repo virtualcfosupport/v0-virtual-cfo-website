@@ -42,9 +42,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#0A0D14] border-t border-[#C9A84C]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <span className="font-serif text-2xl font-bold text-[#C9A84C]">VirtualCFOSupport</span>
             </Link>

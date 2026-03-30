@@ -102,12 +102,12 @@ export default function CoreServices() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 mb-10 overflow-x-auto pb-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative px-6 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
+              className={`relative px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'text-[#0A0D14] bg-[#C9A84C]'
                   : 'text-[#9CA3AF] bg-[#0A0D14] hover:text-[#F0EDE6] hover:bg-[#1A2235]'
