@@ -1,8 +1,10 @@
 'use client'
 
+import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Clock, Rocket } from 'lucide-react'
-import Script from 'next/script'
+
+const CAL_URL = 'https://cal.com/virtualcfosupport'
 
 const bookingOptions = [
   {
@@ -11,7 +13,6 @@ const bookingOptions = [
     duration: '30 min',
     price: 'Free',
     description: 'Discovery & fit assessment',
-    calLink: 'virtualcfosupport/cfo-strategy-call',
   },
   {
     icon: Clock,
@@ -19,7 +20,6 @@ const bookingOptions = [
     duration: '45 min',
     price: 'Free',
     description: 'Deep dive into current processes',
-    calLink: 'virtualcfosupport/workflow-review',
   },
   {
     icon: Rocket,
@@ -27,15 +27,16 @@ const bookingOptions = [
     duration: '60 min',
     price: 'Structured',
     description: 'Begin your 2-4 week pilot',
-    calLink: 'virtualcfosupport/start-pilot',
   },
 ]
 
 export default function BookingSection() {
+  const openCal = useCallback(() => {
+    window.open(CAL_URL, '_blank', 'noopener,noreferrer')
+  }, [])
+
   return (
     <section id="book" className="relative py-24 bg-[#1A2235]">
-      <Script src="https://cal.com/embed.js" strategy="lazyOnload" />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -62,9 +63,8 @@ export default function BookingSection() {
           className="text-center mb-12"
         >
           <button
-            data-cal-link="virtualcfosupport/cfo-strategy-call"
-            data-cal-config='{"layout":"month_view"}'
-            className="inline-flex items-center gap-2 px-10 py-5 gold-gradient text-[#0A0D14] font-bold text-lg rounded-lg hover:opacity-90 transition-all duration-200 gold-glow"
+            onClick={openCal}
+            className="inline-flex items-center gap-2 px-10 py-5 gold-gradient text-[#0A0D14] font-bold text-lg rounded-lg hover:opacity-90 transition-all duration-200 gold-glow cursor-pointer"
           >
             Book Your Free CFO Call Today
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +74,7 @@ export default function BookingSection() {
         </motion.div>
 
         {/* Booking Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {bookingOptions.map((option, index) => (
             <motion.div
               key={option.title}
@@ -99,12 +99,11 @@ export default function BookingSection() {
                 </span>
               </div>
 
-              <p className="text-[#9CA3AF] mb-6">{option.description}</p>
+              <p className="text-[#9CA3AF] text-sm mb-6">{option.description}</p>
 
               <button
-                data-cal-link={option.calLink}
-                data-cal-config='{"layout":"month_view"}'
-                className="w-full py-3 border-2 border-[#C9A84C] text-[#C9A84C] font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-all duration-200"
+                onClick={openCal}
+                className="w-full py-3 border-2 border-[#C9A84C] text-[#C9A84C] font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-all duration-200 cursor-pointer"
               >
                 Book Now
               </button>
