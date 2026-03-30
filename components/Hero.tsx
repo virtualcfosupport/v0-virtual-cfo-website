@@ -76,8 +76,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-lg sm:text-xl text-[#9CA3AF] mb-10 text-pretty"
           >
-            A CFO-led platform combining US oversight with an Accra delivery hub to improve 
-            cash flow, strengthen controls, and scale efficiently.
+            <span className="font-semibold text-[#F0EDE6] block mb-2">Elite US Strategy. Global Execution.</span>
+            A team of Big 4 and Fortune 500 finance experts based in the US, powered by a dedicated execution and delivery hub in Accra, Ghana.
           </motion.p>
 
           {/* CTAs */}

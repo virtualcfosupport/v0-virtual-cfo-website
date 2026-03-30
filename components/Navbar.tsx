@@ -25,6 +25,25 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        // Optional: update URL hash without scrolling
+        window.history.pushState(null, '', href)
+      }
+      setIsMobileMenuOpen(false)
+    } else if (href === '/') {
+      if (window.location.pathname === '/') {
+        e.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        setIsMobileMenuOpen(false)
+      }
+    }
+  }
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -39,7 +58,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
+          <Link 
+            href="/" 
+            onClick={(e) => handleNavClick(e, '/')}
+            className="flex flex-col"
+          >
             <span className="font-serif text-xl md:text-2xl font-bold text-[#C9A84C]">
               VirtualCFOSupport
             </span>
@@ -54,6 +77,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-[#F0EDE6] hover:text-[#C9A84C] transition-colors duration-200 text-sm font-medium"
               >
                 {link.label}
@@ -65,6 +89,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="#book"
+              onClick={(e) => handleNavClick(e, '#book')}
               className="inline-flex items-center gap-2 px-6 py-2.5 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200"
             >
               Book a CFO Call
@@ -100,7 +125,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="block text-[#F0EDE6] hover:text-[#C9A84C] transition-colors duration-200 text-lg font-medium py-2"
                 >
                   {link.label}
@@ -108,7 +133,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="#book"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, '#book')}
                 className="block w-full text-center px-6 py-3 gold-gradient text-[#0A0D14] font-semibold rounded-lg mt-4"
               >
                 Book a CFO Call
