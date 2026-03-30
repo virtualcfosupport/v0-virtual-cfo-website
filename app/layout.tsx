@@ -21,18 +21,8 @@ export const metadata: Metadata = {
   keywords: 'virtual CFO, accounts payable, accounts receivable, finance operations, Accra, outsourcing, cash flow optimization',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' }
     ],
     apple: '/apple-icon.png',
   },
