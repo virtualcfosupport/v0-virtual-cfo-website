@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { X, Check } from 'lucide-react'
 
 const comparisons = [
-  { label: 'Outsourcing / Back-office', isRight: false },
+  { label: 'Back-office Operations', isRight: false },
   { label: 'Bookkeeping Only', isRight: false },
   { label: 'Finance Operations Partner', isRight: true },
 ]

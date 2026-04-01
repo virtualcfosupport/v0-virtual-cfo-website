@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Clock, Linkedin, CheckCircle, AlertCircle, Loader2
 const serviceOptions = [
   'Accounts Payable',
   'Accounts Receivable',
-  'Full AP/AR Outsourcing',
+  'Full AP/AR Management',
   'CFO Advisory',
   'Automation Enablement',
   'Not sure yet',
@@ -23,7 +23,7 @@ const volumeOptions = [
 const contactInfo = [
   { icon: Mail, label: 'hello@virtualcfosupport.com' },
   { icon: Phone, label: '+1 (555) 123-4567' },
-  { icon: MapPin, label: 'Accra, Ghana + US Operations' },
+  { icon: MapPin, label: 'US Operations + Accra, Ghana Delivery Hub' },
   { icon: Clock, label: 'Response within 24 hours' },
 ]
 

@@ -4,7 +4,7 @@ import { Shield, Globe, Users, Zap, Database, Clock, Calendar } from 'lucide-rea
 
 const trustItems = [
   { icon: Shield, text: 'CFO-Supervised' },
-  { icon: Globe, text: 'US + Ghana Delivery' },
+  { icon: Globe, text: 'US + Accra, Ghana Delivery Hub' },
   { icon: Users, text: 'AP/AR Specialists' },
   { icon: Zap, text: 'Automation-First' },
   { icon: Database, text: 'ERP Integrated' },

@@ -41,7 +41,7 @@ const solutionLayers = [
   },
   {
     flag: 'GH',
-    title: 'Accra Hub',
+    title: 'Accra Delivery Hub',
     items: ['AP/AR Execution', 'Analytics', 'Reporting'],
     bgClass: 'bg-[#111827]',
   },
@@ -147,7 +147,7 @@ export default function ProblemSolution() {
                   {index < solutionLayers.length - 1 && (
                     <div className="absolute left-1/2 -bottom-4 w-0.5 h-8 bg-gradient-to-b from-[#C9A84C] to-transparent z-10" />
                   )}
-                  
+
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-10 h-10 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C] font-bold text-sm">
                       {layer.flag}

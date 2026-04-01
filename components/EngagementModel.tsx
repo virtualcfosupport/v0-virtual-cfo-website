@@ -17,7 +17,7 @@ const steps = [
     number: '02',
     title: 'PILOT',
     timeline: 'Week 3-6',
-    description: 'Live 2-4 week pilot on AP or AR with full CFO oversight',
+    description: 'Live 2-4 week pilot as your embedded Controllership team with full CFO oversight',
   },
   {
     icon: TrendingUp,
@@ -29,6 +29,17 @@ const steps = [
 ]
 
 export default function EngagementModel() {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        window.history.pushState(null, '', href)
+      }
+    }
+  }
+
   return (
     <section id="how-it-works" className="relative py-24 bg-[#0A0D14]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,9 +147,10 @@ export default function EngagementModel() {
         >
           <Link
             href="#book"
+            onClick={(e) => handleNavClick(e, '#book')}
             className="inline-flex items-center gap-2 px-8 py-4 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
           >
-            Start Your Pilot Today
+            Book a Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

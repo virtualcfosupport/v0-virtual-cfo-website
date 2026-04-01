@@ -9,7 +9,7 @@ const CAL_URL = 'https://cal.com/virtualcfosupport'
 const bookingOptions = [
   {
     icon: Phone,
-    title: 'CFO Strategy Call',
+    title: 'CFO Consultation',
     duration: '30 min',
     price: 'Free',
     description: 'Discovery & fit assessment',
@@ -50,7 +50,7 @@ export default function BookingSection() {
             Ready to Transform Your Finance Operations?
           </h2>
           <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
-            Book a no-obligation CFO Strategy Call. We&apos;ll review your current AP/AR setup and identify quick wins.
+            Book a no-obligation CFO Consultation. We&apos;ll review your current AP/AR setup and identify quick wins.
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function BookingSection() {
             onClick={openCal}
             className="inline-flex items-center gap-2 px-10 py-5 gold-gradient text-[#0A0D14] font-bold text-lg rounded-lg hover:opacity-90 transition-all duration-200 gold-glow cursor-pointer"
           >
-            Book Your Free CFO Call Today
+            Book Your Free CFO Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

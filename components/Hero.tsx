@@ -18,6 +18,17 @@ const stagger = {
 }
 
 export default function Hero() {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        window.history.pushState(null, '', href)
+      }
+    }
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0D14]">
       {/* Animated Grid Background */}
@@ -57,7 +68,9 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse" />
-            <span className="text-[#C9A84C] text-sm font-medium tracking-wide">CFO-Led Finance Operations</span>
+            <span className="text-[#C9A84C] text-sm font-medium tracking-wide">
+              Led by Big 4 and Fortune 500 finance experience, with a global delivery hub in Accra, Ghana.
+            </span>
           </motion.div>
 
           {/* Headline */}
@@ -66,8 +79,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#F0EDE6] leading-tight mb-6 text-balance"
           >
-            Transform Your Finance Operations
-            <span className="block text-[#C9A84C]">Not Just Your Costs.</span>
+            U.S.-Based Virtual CFO &
+            <span className="block text-[#C9A84C]">Controllership Partner</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -76,8 +89,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-lg sm:text-xl text-[#9CA3AF] mb-10 text-pretty"
           >
-            <span className="font-semibold text-[#F0EDE6] block mb-2">Elite US Strategy. Global Execution.</span>
-            A team of Big 4 and Fortune 500 finance experts based in the US, powered by a dedicated execution and delivery hub in Accra, Ghana.
+            We help growing companies build, manage, and scale their finance function — from day-to-day operations to board-ready reporting — without the cost of a full in-house team.
           </motion.p>
 
           {/* CTAs */}
@@ -88,27 +100,20 @@ export default function Hero() {
           >
             <Link
               href="#book"
+              onClick={(e) => handleNavClick(e, '#book')}
               className="inline-flex items-center gap-2 px-8 py-4 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:opacity-90 transition-all duration-200 gold-glow"
             >
-              Book a CFO Strategy Call
+              Book a Consultation
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
               href="#services"
+              onClick={(e) => handleNavClick(e, '#services')}
               className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#C9A84C] text-[#C9A84C] font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-all duration-200"
             >
-              Start a 2-4 Week Pilot
-            </Link>
-          </motion.div>
-
-          <motion.div variants={fadeInUp} transition={{ duration: 0.6 }}>
-            <Link
-              href="#services"
-              className="text-[#9CA3AF] hover:text-[#C9A84C] transition-colors duration-200 text-sm underline underline-offset-4"
-            >
-              Schedule an AP/AR Workflow Review
+              See Our Services
             </Link>
           </motion.div>
 

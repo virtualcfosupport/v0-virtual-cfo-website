@@ -35,11 +35,11 @@ export default function WhyAccra() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
-              Excellence Delivered from Accra
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4 text-balance">
+              U.S. Strategic Leadership. Global Execution.
             </h2>
-            <p className="text-[#9CA3AF] text-lg mb-10">
-              Our Accra delivery hub is more than a cost play — it&apos;s a capability advantage.
+            <p className="text-[#9CA3AF] text-lg mb-10 text-pretty">
+              We operate as your U.S.-based Virtual CFO & Controllership Partner, leveraging a world-class global delivery hub in Accra, Ghana to drive operational excellence.
             </p>
 
             <ul className="space-y-4">

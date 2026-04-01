@@ -82,6 +82,17 @@ const tabContent: Record<string, { subheadline: string; services: typeof arServi
 export default function CoreServices() {
   const [activeTab, setActiveTab] = useState('ar')
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        window.history.pushState(null, '', href)
+      }
+    }
+  }
+
   return (
     <section id="services" className="relative py-24 bg-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,8 +107,8 @@ export default function CoreServices() {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
             Our Core Services
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
-            End-to-end ownership across the full AP/AR lifecycle — not just transaction processing.
+          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto text-pretty">
+            We take end-to-end ownership as your Controllership partner, managing the full AP/AR lifecycle with CFO-level oversight.
           </p>
         </motion.div>
 
@@ -215,9 +226,10 @@ export default function CoreServices() {
         >
           <Link
             href="#book"
+            onClick={(e) => handleNavClick(e, '#book')}
             className="inline-flex items-center gap-2 px-8 py-4 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:opacity-90 transition-all duration-200"
           >
-            Book a Service Review
+            Book a Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
