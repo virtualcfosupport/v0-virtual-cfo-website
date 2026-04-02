@@ -51,7 +51,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0A0D14]/90 backdrop-blur-md py-3'
+          ? 'bg-[#fcfaf5]/90 backdrop-blur-md py-3 border-b border-[#ded3ba] shadow-sm'
           : 'bg-transparent py-5'
       }`}
     >
@@ -66,7 +66,7 @@ export default function Navbar() {
             <span className="font-serif text-xl md:text-2xl font-bold text-[#C9A84C]">
               VirtualCFOSupport
             </span>
-            <span className="text-xs text-[#9CA3AF] tracking-wider uppercase">
+            <span className="text-xs text-muted-foreground tracking-wider uppercase">
               Finance Operations
             </span>
           </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[#F0EDE6] hover:text-[#C9A84C] transition-colors duration-200 text-sm font-medium"
+                className="text-foreground hover:text-[#C9A84C] transition-colors duration-200 text-sm font-medium"
               >
                 {link.label}
               </Link>
@@ -90,10 +90,10 @@ export default function Navbar() {
             <Link
               href="#book"
               onClick={(e) => handleNavClick(e, '#book')}
-              className="inline-flex items-center gap-2 px-6 py-2.5 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200"
+              className="group inline-flex items-center gap-2 px-6 py-2.5 gold-gradient text-[#0A0D14] font-semibold rounded-lg hover:-translate-y-0.5 transition-all duration-200 gold-glow"
             >
               Book a CFO Call
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
@@ -102,7 +102,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-[#F0EDE6] hover:text-[#C9A84C] transition-colors"
+            className="lg:hidden p-2 text-foreground hover:text-[#C9A84C] transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,7 +118,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#111827] border-t border-[#2D3748]"
+            className="lg:hidden bg-white/95 border-t border-border shadow-lg"
           >
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -126,7 +126,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="block text-[#F0EDE6] hover:text-[#C9A84C] transition-colors duration-200 text-lg font-medium py-2"
+                  className="block text-foreground hover:text-[#C9A84C] transition-colors duration-200 text-lg font-medium py-2"
                 >
                   {link.label}
                 </Link>

@@ -9,7 +9,6 @@ import {
   Bot, Settings, Database, Link as LinkIcon, MailCheck, Lock
 } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const tabs = [
   { id: 'ar', label: 'Accounts Receivable' },
@@ -94,7 +93,7 @@ export default function CoreServices() {
   }
 
   return (
-    <section id="services" className="relative py-24 bg-[#111827]">
+    <section id="services" className="relative py-24 bg-[linear-gradient(180deg,#f6eedc_0%,#efe4ce_100%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -104,10 +103,10 @@ export default function CoreServices() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Core Services
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto text-pretty">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
             We take end-to-end ownership as your Controllership partner, managing the full AP/AR lifecycle with CFO-level oversight.
           </p>
         </motion.div>
@@ -121,7 +120,7 @@ export default function CoreServices() {
               className={`relative px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'text-[#0A0D14] bg-[#C9A84C]'
-                  : 'text-[#9CA3AF] bg-[#0A0D14] hover:text-[#F0EDE6] hover:bg-[#1A2235]'
+                  : 'text-muted-foreground bg-white border border-border hover:text-foreground hover:bg-[#f7f1e4]'
               }`}
             >
               {tab.label}
@@ -151,7 +150,7 @@ export default function CoreServices() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="flex gap-4 p-6 bg-[#0A0D14] rounded-xl border border-[#2D3748] hover:border-[#C9A84C]/30 transition-colors"
+                  className="flex gap-4 p-6 bg-white rounded-xl border border-border shadow-sm hover:border-[#C9A84C]/30 transition-colors"
                 >
                   <div className="shrink-0">
                     <div className="w-10 h-10 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center">
@@ -159,8 +158,8 @@ export default function CoreServices() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#F0EDE6] mb-1">{service.title}</h4>
-                    <p className="text-[#9CA3AF] text-sm leading-relaxed">{service.description}</p>
+                    <h4 className="font-semibold text-foreground mb-1">{service.title}</h4>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -174,12 +173,12 @@ export default function CoreServices() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="mb-12"
               >
-                <p className="text-center text-[#9CA3AF] text-sm mb-6">ERP & Accounting Platform Integrations</p>
+                <p className="text-center text-muted-foreground text-sm mb-6">ERP & Accounting Platform Integrations</p>
                 <div className="flex flex-wrap justify-center gap-4">
                   {erpLogos.map((erp) => (
                     <div
                       key={erp.name}
-                      className="px-6 py-3 bg-[#0A0D14] rounded-lg border border-[#2D3748] text-[#9CA3AF] hover:text-[#C9A84C] hover:border-[#C9A84C]/30 transition-all"
+                      className="px-6 py-3 bg-white rounded-lg border border-border text-muted-foreground hover:text-[#C9A84C] hover:border-[#C9A84C]/30 transition-all shadow-sm"
                     >
                       <span className="font-medium">{erp.name}</span>
                     </div>
@@ -196,9 +195,9 @@ export default function CoreServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="bg-[#0A0D14] rounded-xl p-8 border border-[#2D3748]"
+          className="bg-white rounded-xl p-8 border border-border shadow-sm"
         >
-          <h3 className="text-center font-serif text-2xl font-bold text-[#F0EDE6] mb-8">
+          <h3 className="text-center font-serif text-2xl font-bold text-foreground mb-8">
             Our Service Level Commitments
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -208,8 +207,8 @@ export default function CoreServices() {
                   <item.icon className="w-5 h-5 text-[#C9A84C]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F0EDE6] text-sm">{item.title}</h4>
-                  <p className="text-[#9CA3AF] text-sm">{item.value}</p>
+                  <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm">{item.value}</p>
                 </div>
               </div>
             ))}

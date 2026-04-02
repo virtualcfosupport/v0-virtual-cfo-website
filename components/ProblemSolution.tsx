@@ -31,19 +31,19 @@ const solutionLayers = [
     flag: 'US',
     title: 'US Layer',
     items: ['CFO Oversight', 'Approvals', 'Stakeholder Alignment'],
-    bgClass: 'bg-[#1A2235]',
+    bgClass: 'bg-white',
   },
   {
     flag: 'Tech',
     title: 'Technology Layer',
     items: ['ERP Integration', 'OCR Automation', 'Real-time Reporting'],
-    bgClass: 'bg-[#151B2A]',
+    bgClass: 'bg-[#faf6ec]',
   },
   {
     flag: 'GH',
     title: 'Accra Delivery Hub',
     items: ['AP/AR Execution', 'Analytics', 'Reporting'],
-    bgClass: 'bg-[#111827]',
+    bgClass: 'bg-[#f4ecda]',
   },
 ]
 
@@ -59,7 +59,7 @@ export default function ProblemSolution() {
   return (
     <>
       {/* Problem Section */}
-      <section id="problem" className="relative py-24 bg-[#111827]">
+      <section id="problem" className="relative py-24 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -72,7 +72,7 @@ export default function ProblemSolution() {
             <span className="inline-block text-[#C9A84C] text-sm font-semibold tracking-wider uppercase mb-4">
               The Challenge
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-balance">
               Finance Inefficiencies Are Silently Killing Your Growth
             </h2>
           </motion.div>
@@ -86,13 +86,13 @@ export default function ProblemSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#0A0D14] rounded-xl p-6 border-l-4 border-amber-600/70"
+                className="bg-white rounded-xl p-6 border border-border border-l-4 border-l-amber-600/70 shadow-sm"
               >
                 <div className="w-12 h-12 rounded-lg bg-amber-600/10 flex items-center justify-center mb-4">
                   <problem.icon className="w-6 h-6 text-amber-500" />
                 </div>
-                <h3 className="font-semibold text-[#F0EDE6] mb-2">{problem.title}</h3>
-                <p className="text-[#9CA3AF] text-sm">{problem.description}</p>
+                <h3 className="font-semibold text-foreground mb-2">{problem.title}</h3>
+                <p className="text-muted-foreground text-sm">{problem.description}</p>
               </motion.div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function ProblemSolution() {
       </section>
 
       {/* Solution Section */}
-      <section id="solution" className="relative py-24 bg-[#0A0D14]">
+      <section id="solution" className="relative py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -125,7 +125,7 @@ export default function ProblemSolution() {
             <span className="inline-block text-[#C9A84C] text-sm font-semibold tracking-wider uppercase mb-4">
               Our Platform
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-balance">
               A Finance Operations Platform Built for Scale
             </h2>
           </motion.div>
@@ -141,7 +141,7 @@ export default function ProblemSolution() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-100px' }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className={`${layer.bgClass} rounded-xl p-6 border border-[#2D3748] relative overflow-hidden`}
+                  className={`${layer.bgClass} rounded-xl p-6 border border-border relative overflow-hidden shadow-sm`}
                 >
                   {/* Connector line */}
                   {index < solutionLayers.length - 1 && (
@@ -152,13 +152,13 @@ export default function ProblemSolution() {
                     <div className="w-10 h-10 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-[#C9A84C] font-bold text-sm">
                       {layer.flag}
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#F0EDE6]">{layer.title}</h3>
+                    <h3 className="font-serif text-xl font-bold text-foreground">{layer.title}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {layer.items.map((item) => (
                       <span
                         key={item}
-                        className="px-3 py-1 bg-[#0A0D14] rounded-full text-[#9CA3AF] text-sm"
+                        className="px-3 py-1 bg-white rounded-full text-muted-foreground text-sm border border-border"
                       >
                         {item}
                       </span>
@@ -174,9 +174,9 @@ export default function ProblemSolution() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-[#111827] rounded-xl p-8 border border-[#2D3748] order-1 lg:order-2"
+              className="bg-card rounded-xl p-8 border border-border order-1 lg:order-2 shadow-sm"
             >
-              <h3 className="font-serif text-2xl font-bold text-[#F0EDE6] mb-6">Key Outcomes</h3>
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Key Outcomes</h3>
               <ul className="space-y-4">
                 {outcomes.map((outcome, index) => (
                   <motion.li
@@ -188,7 +188,7 @@ export default function ProblemSolution() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className="w-5 h-5 text-[#C9A84C] mt-0.5 shrink-0" />
-                    <span className="text-[#F0EDE6]">{outcome}</span>
+                    <span className="text-foreground">{outcome}</span>
                   </motion.li>
                 ))}
               </ul>

@@ -72,7 +72,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="relative py-24 bg-[#0A0D14]">
+    <section className="relative py-24 bg-[linear-gradient(180deg,#f7f1e4_0%,#efe6d4_100%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -82,10 +82,10 @@ export default function ContactForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Get in Touch
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have questions before booking? Send us a message and a member of our team will respond within 24 hours.
           </p>
         </motion.div>
@@ -102,12 +102,12 @@ export default function ContactForm() {
             {contactInfo.map((item, index) => (
               <div
                 key={item.label}
-                className="flex items-center gap-4 p-4 bg-[#111827] rounded-xl border border-[#2D3748]"
+                className="flex items-center gap-4 p-4 bg-white rounded-xl border border-border shadow-sm"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center shrink-0">
                   <item.icon className="w-5 h-5 text-[#C9A84C]" />
                 </div>
-                <span className="text-[#F0EDE6]">{item.label}</span>
+                <span className="text-foreground">{item.label}</span>
               </div>
             ))}
 
@@ -137,13 +137,13 @@ export default function ContactForm() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-[#111827] rounded-xl p-12 border border-[#2D3748] text-center"
+                  className="bg-white rounded-xl p-12 border border-border text-center shadow-sm"
                 >
                   <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-green-500" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#F0EDE6] mb-2">Thank you!</h3>
-                  <p className="text-[#9CA3AF]">We&apos;ll be in touch within 24 hours.</p>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-2">Thank you!</h3>
+                  <p className="text-muted-foreground">We&apos;ll be in touch within 24 hours.</p>
                   <button
                     onClick={() => setStatus('idle')}
                     className="mt-6 px-6 py-2 border border-[#C9A84C] text-[#C9A84C] rounded-lg hover:bg-[#C9A84C]/10 transition-colors"
@@ -157,10 +157,10 @@ export default function ContactForm() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit}
-                  className="bg-[#111827] rounded-xl p-8 border border-[#2D3748] space-y-6"
+                  className="bg-white rounded-xl p-8 border border-border space-y-6 shadow-sm"
                 >
                   {status === 'error' && (
-                    <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400">
+                    <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-600">
                       <AlertCircle className="w-5 h-5 shrink-0" />
                       <span>Something went wrong. Please try again or email us directly.</span>
                     </div>
@@ -178,7 +178,7 @@ export default function ContactForm() {
                         required
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       />
                     </div>
 
@@ -193,7 +193,7 @@ export default function ContactForm() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       />
                     </div>
 
@@ -207,7 +207,7 @@ export default function ContactForm() {
                         name="companyName"
                         value={formData.companyName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       />
                     </div>
 
@@ -221,7 +221,7 @@ export default function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       />
                     </div>
 
@@ -235,7 +235,7 @@ export default function ContactForm() {
                         required
                         value={formData.serviceInterest}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       >
                         <option value="">Select an option</option>
                         {serviceOptions.map((option) => (
@@ -253,7 +253,7 @@ export default function ContactForm() {
                         name="invoiceVolume"
                         value={formData.invoiceVolume}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
+                        className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all"
                       >
                         <option value="">Select an option</option>
                         {volumeOptions.map((option) => (
@@ -274,7 +274,7 @@ export default function ContactForm() {
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-[#0A0D14] border border-[#2D3748] rounded-lg text-[#F0EDE6] focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all resize-none"
+                      className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-[#C9A84C]/50 focus:border-[#C9A84C] transition-all resize-none"
                     />
                   </div>
 
@@ -285,9 +285,9 @@ export default function ContactForm() {
                       name="consent"
                       checked={formData.consent}
                       onChange={handleChange}
-                      className="mt-1 w-4 h-4 rounded border-[#2D3748] bg-[#0A0D14] text-[#C9A84C] focus:ring-[#C9A84C]/50"
+                      className="mt-1 w-4 h-4 rounded border-border bg-background text-[#C9A84C] focus:ring-[#C9A84C]/50"
                     />
-                    <span className="text-[#9CA3AF] text-sm">
+                    <span className="text-muted-foreground text-sm">
                       I agree to receive communications from VirtualCFOSupport
                     </span>
                   </label>

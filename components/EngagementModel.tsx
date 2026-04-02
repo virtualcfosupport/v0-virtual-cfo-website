@@ -41,7 +41,7 @@ export default function EngagementModel() {
   }
 
   return (
-    <section id="how-it-works" className="relative py-24 bg-[#0A0D14]">
+    <section id="how-it-works" className="relative py-24 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -51,10 +51,10 @@ export default function EngagementModel() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             How We Engage
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From assessment to scale in weeks, not months.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ export default function EngagementModel() {
         {/* Timeline - Desktop */}
         <div className="hidden md:block relative">
           {/* Connecting Line */}
-          <div className="absolute top-[60px] left-0 right-0 h-0.5 bg-[#2D3748]">
+          <div className="absolute top-[60px] left-0 right-0 h-0.5 bg-border">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -83,7 +83,7 @@ export default function EngagementModel() {
                 className="relative text-center"
               >
                 {/* Step Circle */}
-                <div className="relative z-10 mx-auto w-[120px] h-[120px] rounded-full bg-[#111827] border-2 border-[#C9A84C] flex items-center justify-center mb-8">
+                <div className="relative z-10 mx-auto w-[120px] h-[120px] rounded-full bg-white border-2 border-[#C9A84C] flex items-center justify-center mb-8 shadow-sm">
                   <div className="text-center">
                     <step.icon className="w-8 h-8 text-[#C9A84C] mx-auto mb-1" />
                     <span className="text-[#C9A84C] text-xs font-bold">{step.number}</span>
@@ -91,12 +91,12 @@ export default function EngagementModel() {
                 </div>
 
                 {/* Content */}
-                <div className="bg-[#111827] rounded-xl p-6 border border-[#2D3748]">
+                <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
                   <div className="inline-block px-3 py-1 bg-[#C9A84C]/10 rounded-full text-[#C9A84C] text-sm font-medium mb-3">
                     {step.timeline}
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-[#F0EDE6] mb-3">{step.title}</h3>
-                  <p className="text-[#9CA3AF]">{step.description}</p>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -116,22 +116,22 @@ export default function EngagementModel() {
             >
               {/* Line connector */}
               {index < steps.length - 1 && (
-                <div className="absolute left-[30px] top-[60px] bottom-0 w-0.5 bg-gradient-to-b from-[#C9A84C] to-[#2D3748]" />
+                <div className="absolute left-[30px] top-[60px] bottom-0 w-0.5 bg-gradient-to-b from-[#C9A84C] to-[#ded3ba]" />
               )}
               
               {/* Circle */}
-              <div className="shrink-0 w-[60px] h-[60px] rounded-full bg-[#111827] border-2 border-[#C9A84C] flex items-center justify-center z-10">
+              <div className="shrink-0 w-[60px] h-[60px] rounded-full bg-white border-2 border-[#C9A84C] flex items-center justify-center z-10 shadow-sm">
                 <step.icon className="w-6 h-6 text-[#C9A84C]" />
               </div>
 
               {/* Content */}
-              <div className="flex-1 bg-[#111827] rounded-xl p-4 border border-[#2D3748]">
+              <div className="flex-1 bg-white rounded-xl p-4 border border-border shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[#C9A84C] text-xs font-bold">{step.number}</span>
                   <span className="px-2 py-0.5 bg-[#C9A84C]/10 rounded-full text-[#C9A84C] text-xs">{step.timeline}</span>
                 </div>
-                <h3 className="font-serif text-xl font-bold text-[#F0EDE6] mb-2">{step.title}</h3>
-                <p className="text-[#9CA3AF] text-sm">{step.description}</p>
+                <h3 className="font-serif text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm">{step.description}</p>
               </div>
             </motion.div>
           ))}
