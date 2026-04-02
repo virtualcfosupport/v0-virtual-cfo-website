@@ -48,7 +48,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative py-24 bg-[#111827]">
+    <section className="relative py-24 bg-secondary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -58,7 +58,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             What Our Clients Say
           </h2>
         </motion.div>
@@ -76,7 +76,7 @@ export default function Testimonials() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.4 }}
-              className="bg-[#0A0D14] rounded-2xl p-8 sm:p-12 border border-[#2D3748]"
+              className="bg-white rounded-2xl p-8 sm:p-12 border border-border shadow-sm"
             >
               {/* Quote Icon */}
               <Quote className="w-12 h-12 text-[#C9A84C]/30 mb-6" />
@@ -89,7 +89,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-xl sm:text-2xl text-[#F0EDE6] leading-relaxed mb-8 font-serif italic">
+              <blockquote className="text-xl sm:text-2xl text-foreground leading-relaxed mb-8 font-serif italic">
                 &ldquo;{testimonials[current].quote}&rdquo;
               </blockquote>
 
@@ -101,8 +101,8 @@ export default function Testimonials() {
                   </span>
                 </div>
                 <div>
-                  <div className="text-[#F0EDE6] font-semibold">{testimonials[current].author}</div>
-                  <div className="text-[#9CA3AF] text-sm">
+                  <div className="text-foreground font-semibold">{testimonials[current].author}</div>
+                  <div className="text-muted-foreground text-sm">
                     {testimonials[current].title}, {testimonials[current].company}
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-2 rounded-full bg-[#0A0D14] border border-[#2D3748] text-[#9CA3AF] hover:text-[#C9A84C] hover:border-[#C9A84C] transition-colors"
+              className="p-2 rounded-full bg-white border border-border text-muted-foreground hover:text-[#C9A84C] hover:border-[#C9A84C] transition-colors shadow-sm"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -130,7 +130,7 @@ export default function Testimonials() {
                     setCurrent(index)
                   }}
                   className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                    index === current ? 'w-6 bg-[#C9A84C]' : 'bg-[#2D3748] hover:bg-[#9CA3AF]'
+                    index === current ? 'w-6 bg-[#C9A84C]' : 'bg-[#ded3ba] hover:bg-[#c0ae7e]'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -139,7 +139,7 @@ export default function Testimonials() {
 
             <button
               onClick={next}
-              className="p-2 rounded-full bg-[#0A0D14] border border-[#2D3748] text-[#9CA3AF] hover:text-[#C9A84C] hover:border-[#C9A84C] transition-colors"
+              className="p-2 rounded-full bg-white border border-border text-muted-foreground hover:text-[#C9A84C] hover:border-[#C9A84C] transition-colors shadow-sm"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />

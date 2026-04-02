@@ -32,7 +32,7 @@ const cards = [
 
 export default function WhatWeAre() {
   return (
-    <section className="relative py-24 bg-[#0A0D14]">
+    <section className="relative py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -40,10 +40,10 @@ export default function WhatWeAre() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Where We Sit
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             We operate as your embedded finance team — combining execution with CFO-level oversight.
           </p>
         </motion.div>
@@ -57,13 +57,13 @@ export default function WhatWeAre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-[#111827] rounded-xl p-8 border-l-4 border-[#C9A84C] hover:shadow-[0_0_40px_rgba(201,168,76,0.15)] transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-card rounded-xl p-8 border border-border border-l-4 border-l-[#C9A84C] shadow-sm hover:shadow-[0_18px_45px_rgba(201,168,76,0.14)] transition-all duration-300 hover:-translate-y-1"
             >
               <div className="w-14 h-14 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center mb-6 group-hover:bg-[#C9A84C]/20 transition-colors">
                 <card.icon className="w-7 h-7 text-[#C9A84C]" />
               </div>
-              <h3 className="font-serif text-xl font-bold text-[#F0EDE6] mb-3">{card.title}</h3>
-              <p className="text-[#9CA3AF] leading-relaxed">{card.description}</p>
+              <h3 className="font-serif text-xl font-bold text-foreground mb-3">{card.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{card.description}</p>
             </motion.div>
           ))}
         </div>
@@ -74,12 +74,12 @@ export default function WhatWeAre() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative bg-[#1A2235] rounded-xl p-8 border border-[#C9A84C]/30"
+          className="relative bg-secondary rounded-xl p-8 border border-[#C9A84C]/30 shadow-sm"
         >
           <div className="absolute -top-3 left-8 px-4 py-1 bg-[#C9A84C] rounded-full">
             <span className="text-[#0A0D14] text-sm font-semibold">What Sets Us Apart</span>
           </div>
-          <p className="text-[#F0EDE6] text-lg italic leading-relaxed pt-2">
+          <p className="text-foreground text-lg italic leading-relaxed pt-2">
             &ldquo;Unlike traditional back-office providers, we bring automation, tools (QuickBooks, Xero, NetSuite), 
             clear SLAs, and audit-ready processes — so you get operational execution AND financial transformation.&rdquo;
           </p>

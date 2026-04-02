@@ -25,7 +25,7 @@ export default function WhyAccra() {
   const imageY = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   return (
-    <section id="why-accra" ref={sectionRef} className="relative py-24 bg-[#111827] overflow-hidden">
+    <section id="why-accra" ref={sectionRef} className="relative py-24 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Content */}
@@ -35,10 +35,10 @@ export default function WhyAccra() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4 text-balance">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
               U.S. Strategic Leadership. Global Execution.
             </h2>
-            <p className="text-[#9CA3AF] text-lg mb-10 text-pretty">
+            <p className="text-muted-foreground text-lg mb-10 text-pretty">
               We operate as your U.S.-based Virtual CFO & Controllership Partner, leveraging a world-class global delivery hub in Accra, Ghana to drive operational excellence.
             </p>
 
@@ -55,7 +55,7 @@ export default function WhyAccra() {
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-[#C9A84C]/10 flex items-center justify-center">
                     <feature.icon className="w-5 h-5 text-[#C9A84C]" />
                   </div>
-                  <span className="text-[#F0EDE6] pt-2">{feature.text}</span>
+                  <span className="text-foreground pt-2">{feature.text}</span>
                 </motion.li>
               ))}
             </ul>
@@ -96,7 +96,7 @@ export default function WhyAccra() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#fcfaf5]/80 via-[#fcfaf5]/10 to-transparent" />
               
               {/* Floating Badge */}
               <div className="absolute bottom-6 left-6 right-6">
@@ -105,8 +105,8 @@ export default function WhyAccra() {
                     <Globe className="w-6 h-6 text-[#C9A84C]" />
                   </div>
                   <div>
-                    <div className="text-[#F0EDE6] font-semibold">Accra, Ghana</div>
-                    <div className="text-[#9CA3AF] text-sm">Finance Operations Hub</div>
+                    <div className="text-foreground font-semibold">Accra, Ghana</div>
+                    <div className="text-muted-foreground text-sm">Finance Operations Hub</div>
                   </div>
                 </div>
               </div>
