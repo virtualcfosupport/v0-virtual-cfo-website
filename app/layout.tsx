@@ -17,8 +17,8 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'VirtualCFOSupport | CFO-Led Finance Operations Platform',
-  description: 'Transform your AP/AR operations with CFO oversight and Accra hub execution. Reduce errors by 50-70%, accelerate processing 2-3x, improve DSO by 5-15 days.',
-  keywords: 'virtual CFO, accounts payable, accounts receivable, finance operations, Accra, outsourcing, cash flow optimization',
+  description: 'Transform your AP/AR operations with CFO oversight and Accra Delivery Hub execution. Reduce errors by 50-70%, accelerate processing 2-3x, improve DSO by 5-15 days.',
+  keywords: 'virtual CFO, accounts payable, accounts receivable, finance operations, Accra, cash flow optimization, controllership',
   icons: {
     icon: [
       { url: '/icon.svg', type: 'image/svg+xml' },
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'VirtualCFOSupport | CFO-Led Finance Operations Platform',
-    description: 'Transform your AP/AR operations with CFO oversight and Accra hub execution.',
+    description: 'Transform your AP/AR operations with CFO oversight and Accra Delivery Hub execution.',
     type: 'website',
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0A0D14',
+  themeColor: '#fcfaf5',
   width: 'device-width',
   initialScale: 1,
 }
@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="font-sans antialiased bg-[#0A0D14] text-[#F0EDE6]">
+      <body className="font-sans antialiased bg-background text-foreground">
         {children}
         <Analytics />
       </body>

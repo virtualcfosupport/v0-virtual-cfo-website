@@ -4,7 +4,7 @@ import { Shield, Globe, Users, Zap, Database, Clock, Calendar } from 'lucide-rea
 
 const trustItems = [
   { icon: Shield, text: 'CFO-Supervised' },
-  { icon: Globe, text: 'US + Ghana Delivery' },
+  { icon: Globe, text: 'US + Accra, Ghana Delivery Hub' },
   { icon: Users, text: 'AP/AR Specialists' },
   { icon: Zap, text: 'Automation-First' },
   { icon: Database, text: 'ERP Integrated' },
@@ -14,11 +14,11 @@ const trustItems = [
 
 export default function TrustBar() {
   return (
-    <section className="bg-[#111827] border-y border-[#2D3748] py-4 overflow-hidden">
+    <section className="bg-secondary border-y border-border py-4 overflow-hidden">
       <div className="relative">
         {/* Gradient masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#111827] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#111827] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f2ebdc] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f2ebdc] to-transparent z-10" />
         
         {/* Ticker */}
         <div className="animate-ticker flex whitespace-nowrap">
@@ -28,7 +28,7 @@ export default function TrustBar() {
               className="flex items-center gap-2 mx-8"
             >
               <item.icon className="w-5 h-5 text-[#C9A84C]" />
-              <span className="text-[#F0EDE6] text-sm font-medium">{item.text}</span>
+              <span className="text-foreground text-sm font-medium">{item.text}</span>
             </div>
           ))}
         </div>

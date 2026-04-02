@@ -9,7 +9,7 @@ const CAL_URL = 'https://cal.com/virtualcfosupport'
 const bookingOptions = [
   {
     icon: Phone,
-    title: 'CFO Strategy Call',
+    title: 'CFO Consultation',
     duration: '30 min',
     price: 'Free',
     description: 'Discovery & fit assessment',
@@ -36,7 +36,7 @@ export default function BookingSection() {
   }, [])
 
   return (
-    <section id="book" className="relative py-24 bg-[#1A2235]">
+    <section id="book" className="relative py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -46,11 +46,11 @@ export default function BookingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#F0EDE6] mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Ready to Transform Your Finance Operations?
           </h2>
-          <p className="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
-            Book a no-obligation CFO Strategy Call. We&apos;ll review your current AP/AR setup and identify quick wins.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Book a no-obligation CFO Consultation. We&apos;ll review your current AP/AR setup and identify quick wins.
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function BookingSection() {
             onClick={openCal}
             className="inline-flex items-center gap-2 px-10 py-5 gold-gradient text-[#0A0D14] font-bold text-lg rounded-lg hover:opacity-90 transition-all duration-200 gold-glow cursor-pointer"
           >
-            Book Your Free CFO Call Today
+            Book Your Free CFO Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -88,10 +88,10 @@ export default function BookingSection() {
                 <option.icon className="w-6 h-6 text-[#C9A84C]" />
               </div>
 
-              <h3 className="font-serif text-xl font-bold text-[#F0EDE6] mb-2">{option.title}</h3>
+              <h3 className="font-serif text-xl font-bold text-foreground mb-2">{option.title}</h3>
 
               <div className="flex items-center gap-3 mb-4">
-                <span className="px-2 py-1 bg-[#0A0D14] rounded text-[#9CA3AF] text-sm">
+                <span className="px-2 py-1 bg-secondary rounded text-muted-foreground text-sm">
                   {option.duration}
                 </span>
                 <span className="px-2 py-1 bg-[#C9A84C]/10 rounded text-[#C9A84C] text-sm font-medium">
@@ -99,7 +99,7 @@ export default function BookingSection() {
                 </span>
               </div>
 
-              <p className="text-[#9CA3AF] text-sm mb-6">{option.description}</p>
+              <p className="text-muted-foreground text-sm mb-6">{option.description}</p>
 
               <button
                 onClick={openCal}

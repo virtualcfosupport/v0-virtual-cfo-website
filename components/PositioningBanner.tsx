@@ -4,14 +4,14 @@ import { motion } from 'framer-motion'
 import { X, Check } from 'lucide-react'
 
 const comparisons = [
-  { label: 'Outsourcing / Back-office', isRight: false },
+  { label: 'Back-office Operations', isRight: false },
   { label: 'Bookkeeping Only', isRight: false },
   { label: 'Finance Operations Partner', isRight: true },
 ]
 
 export default function PositioningBanner() {
   return (
-    <section className="relative py-16 bg-[#0A0D14] border-y border-[#2D3748]">
+    <section className="relative py-16 bg-[linear-gradient(180deg,#fffaf0_0%,#f7f1e4_100%)] border-y border-border">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -22,10 +22,10 @@ export default function PositioningBanner() {
           <span className="inline-block text-[#C9A84C] text-sm font-semibold tracking-wider uppercase mb-4">
             How We&apos;re Different
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#F0EDE6] mb-6 text-balance">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
             More Than Back-Office Processing — Full Finance Operations Ownership
           </h2>
-          <p className="text-[#9CA3AF] text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-pretty">
+          <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-pretty">
             Traditional AP/AR providers execute transactions. VirtualCFOSupport takes end-to-end 
             ownership of your finance operations — from invoicing to collections to reconciliation to 
             reporting — with cash flow optimization and CFO-level oversight built in.
@@ -40,10 +40,10 @@ export default function PositioningBanner() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full ${
+                className={`relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full ${
                   item.isRight
                     ? 'bg-[#C9A84C]/20 border-2 border-[#C9A84C] text-[#C9A84C]'
-                    : 'bg-[#111827] border border-[#2D3748] text-[#9CA3AF]'
+                    : 'bg-white border border-border text-muted-foreground shadow-sm'
                 }`}
               >
                 {item.isRight ? (
