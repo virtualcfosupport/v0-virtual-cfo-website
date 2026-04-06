@@ -4,8 +4,6 @@ import { useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Clock, Rocket } from 'lucide-react'
 
-const CAL_URL = 'https://cal.com/virtualcfosupport'
-
 const bookingOptions = [
   {
     icon: Phone,
@@ -13,6 +11,7 @@ const bookingOptions = [
     duration: '30 min',
     price: 'Free',
     description: 'Discovery & fit assessment',
+    url: 'https://cal.com/virtualcfosupport/30min',
   },
   {
     icon: Clock,
@@ -20,6 +19,7 @@ const bookingOptions = [
     duration: '45 min',
     price: 'Free',
     description: 'Deep dive into current processes',
+    url: 'https://cal.com/virtualcfosupport/45min',
   },
   {
     icon: Rocket,
@@ -27,12 +27,13 @@ const bookingOptions = [
     duration: '60 min',
     price: 'Structured',
     description: 'Begin your 2-4 week pilot',
+    url: 'https://cal.com/virtualcfosupport/60min',
   },
 ]
 
 export default function BookingSection() {
-  const openCal = useCallback(() => {
-    window.open(CAL_URL, '_blank', 'noopener,noreferrer')
+  const openCal = useCallback((url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer')
   }, [])
 
   return (
@@ -63,7 +64,7 @@ export default function BookingSection() {
           className="text-center mb-12"
         >
           <button
-            onClick={openCal}
+            onClick={() => openCal(bookingOptions[0].url)}
             className="inline-flex items-center gap-2 px-10 py-5 gold-gradient text-[#0A0D14] font-bold text-lg rounded-lg hover:opacity-90 transition-all duration-200 gold-glow cursor-pointer"
           >
             Book Your Free CFO Consultation
@@ -102,7 +103,7 @@ export default function BookingSection() {
               <p className="text-muted-foreground text-sm mb-6">{option.description}</p>
 
               <button
-                onClick={openCal}
+                onClick={() => openCal(option.url)}
                 className="w-full py-3 border-2 border-[#C9A84C] text-[#C9A84C] font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-all duration-200 cursor-pointer"
               >
                 Book Now
