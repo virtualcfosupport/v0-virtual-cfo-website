@@ -22,7 +22,7 @@ const volumeOptions = [
 
 const contactInfo = [
   { icon: Mail, label: 'hello@virtualcfosupport.com' },
-  { icon: Phone, label: '+1 (555) 123-4567' },
+  { icon: Phone, label: '+1 (980) 403-9705' },
   { icon: MapPin, label: 'US Operations + Accra, Ghana Delivery Hub' },
   { icon: Clock, label: 'Response within 24 hours' },
 ]
