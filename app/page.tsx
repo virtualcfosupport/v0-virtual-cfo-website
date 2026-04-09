@@ -8,6 +8,7 @@ import CoreServices from '@/components/CoreServices'
 import Metrics from '@/components/Metrics'
 import WhyAccra from '@/components/WhyAccra'
 import EngagementModel from '@/components/EngagementModel'
+import TeamSection from '@/components/TeamSection'
 import Testimonials from '@/components/Testimonials'
 import BookingSection from '@/components/BookingSection'
 import ContactForm from '@/components/ContactForm'
@@ -35,6 +36,7 @@ export default function Home() {
       <CoreServices />
       <Metrics />
       <WhyAccra />
+      <TeamSection />
       <EngagementModel />
       <Testimonials />
       <BookingSection />

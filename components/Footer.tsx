@@ -33,10 +33,23 @@ export default function Footer() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setStatus('success')
-    setEmail('')
-    setTimeout(() => setStatus('idle'), 3000)
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setEmail('')
+        setTimeout(() => setStatus('idle'), 3000)
+      } else {
+        setStatus('idle')
+      }
+    } catch {
+      setStatus('idle')
+    }
   }
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const WHATSAPP_NUMBER = '+233542880428' // Replace with real number
+const WHATSAPP_NUMBER = '+15551234567' // Replace with real number
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi VirtualCFOSupport! I'm interested in learning more about your finance operations services."
 )

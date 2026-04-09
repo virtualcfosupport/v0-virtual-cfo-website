@@ -68,7 +68,7 @@ export default function WhyAccra() {
               className="mt-10"
             >
               <Link
-                href="#book"
+                href="#team"
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#C9A84C] text-[#C9A84C] font-semibold rounded-lg hover:bg-[#C9A84C]/10 transition-all duration-200"
               >
                 Meet Our Team
@@ -89,8 +89,8 @@ export default function WhyAccra() {
               className="relative aspect-[4/3] rounded-2xl overflow-hidden"
             >
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80"
-                alt="Finance professional in modern office"
+                src="/images/cfo-team-diverse.png"
+                alt="Diverse team of Virtual CFOs in a modern executive office"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
