@@ -44,9 +44,19 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus('loading')
     
-    // Simulate API call (replace with actual Formspree/Resend integration)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
       setStatus('success')
       setFormData({
         fullName: '',
